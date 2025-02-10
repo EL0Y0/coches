@@ -9,6 +9,6 @@
     <h1>Coche con id {{$coche->id}}</h1>
     {{$coche->marca}}
     {{$coche->modelo}}
-
+    <a href="{{route('editarcoche', $coche->id)}}">Editar</a>
 </body>
 </html>

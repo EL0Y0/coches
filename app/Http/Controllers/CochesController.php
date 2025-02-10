@@ -68,6 +68,8 @@ class CochesController extends Controller
         $request->validate($this->validaciones);
         $coche=Coche::findOrFail($id);
         $coche->update($request->all());
+
+        return redirect()->route('listacoches')->with('success', 'Coche actualizado correctamente');
     }
 
     /**

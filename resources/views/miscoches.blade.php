@@ -15,7 +15,11 @@
     <ul>
         @foreach ($coches as $coche)
             <li><a href="{{route('mostrarcoche', $coche->id)}}">{{$coche->marca}}</a> - {{$coche->modelo}}</li>
-            <a href="{{route('eliminarcoche', $coche->id)}}">Eliminar</a>        
+            <form action="{{route('eliminarcoche', $coche->id)}}" method="POST" onsubmit="return confirm('Seguro segurete?')">
+                @csrf
+                @method('DELETE')
+                <button>Eliminar</button>
+            </form>
         @endforeach
     </ul>
     <a href="{{route('crearcoche')}}">Añadir coche-</a>

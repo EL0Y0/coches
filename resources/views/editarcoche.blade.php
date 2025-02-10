@@ -13,14 +13,13 @@
     </ul>
     <form method="POST" action="{{route('actualizarcoche', $coche->id)}}">
         @csrf
-        
         @method('PUT')
         
-        <input type="text" name="marca" value="{{old('marca',$juego->marca)}}" placeholder="marca">
+        <input type="text" name="marca" value="{{old('marca',$coche->marca)}}" placeholder="marca">
         <!-- @error('marca')
             <span>{{ $message }}</span>
         @enderror -->
-        <textarea type="text" name="modelo" value="{{old('modelo',$juego->modelo)}}" placeholder="modeloW"></textarea>
+        <textarea type="text" name="modelo" value="{{old('modelo',$coche->modelo)}}" placeholder="modelo"></textarea>
         <!-- @error('modelo')
             <span>{{ $message }}</span>
         @enderror -->

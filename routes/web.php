@@ -23,6 +23,6 @@ Route::get('/coches', [CochesController::class, 'index'])->name('listacoches');
 Route::get('/coches/{id}', [CochesController::class, 'show'])->name('mostrarcoche');
 Route::get('/crearcoche', [CochesController::class, 'create'])->name('crearcoche');
 Route::post('/coches', [CochesController::class, 'store'])->name('guardarcoche');
-Route::post('/editarcoche/{id}', [CochesController::class, 'edit']);
+Route::get('/editarcoche/{id}', [CochesController::class, 'edit'])->name('editarcoche');
 Route::put('/editarcoche/{id}', [CochesController::class, 'update'])->name('actualizarcoche');
-Route::delete('/coches/{id}', [CochesController::class, 'destroy'])->name('eliminarcoche');
+Route::delete('/eliminarcoche/{id}', [CochesController::class, 'destroy'])->name('eliminarcoche');
