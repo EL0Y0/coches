@@ -23,6 +23,7 @@
         <!-- @error('modelo')
             <span>{{ $message }}</span>
         @enderror -->
+
         <input type="submit" value="Guardar">
     </form>
 </body>

@@ -9,6 +9,8 @@
     <h1>Coche con id {{$coche->id}}</h1>
     {{$coche->marca}}
     {{$coche->modelo}}
+    {{$coche->precio}}€
+    {{$coche->anio}}
     <a href="{{route('editarcoche', $coche->id)}}">Editar</a>
 </body>
 </html>

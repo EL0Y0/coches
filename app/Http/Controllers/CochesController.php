@@ -10,6 +10,8 @@ class CochesController extends Controller
     protected $validaciones=[
         'marca'=>'required|max:10',
         'modelo'=>'required',
+        'precio'=>'required',
+        'anio'=>'required|max:4',
     ];
     /**
      * Display a listing of the resource.
@@ -17,9 +19,19 @@ class CochesController extends Controller
     public function index(Request $request)
     {
         $cochesQuery = Coche::query();
-        if ($request->has('marca')) {
-            $cochesQuery->where('marca', 'like', '%'.$request->nombre.'%');
+
+        if ($request->has('nombre')) {
+            $cochesQuery->where('marca', 'like', '%'.$request->nombre.'%')->orWhere('modelo', 'like', '%' . $request->nombre . '%');
         }
+
+        if ($request->has('precio')) {
+            $cochesQuery->precioMaximo($request->precio);
+        }
+
+        if ($request->has('anio')) {
+            $cochesQuery->anioMinimo($request->anio);
+        }
+
         $coches=$cochesQuery->get();
         return view('miscoches', compact('coches'));
     }

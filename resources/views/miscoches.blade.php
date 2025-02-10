@@ -10,6 +10,9 @@
     {{session('success')}}
     <form action="{{route('listacoches')}}" method="GET">
         <input type="text" name="nombre" placeholder="Filtra por nombre">
+        <input type="number" name="precio" placeholder="Filtra por precio maximo">
+        <input type="number" name="anio" placeholder="Filtra por anio minimo">
+
         <input type="submit" value="Filtrar">
     </form>
     <ul>

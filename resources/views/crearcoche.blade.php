@@ -23,6 +23,8 @@
         <!-- @error('modelo')
             <span>{{ $message }}</span>
         @enderror -->
+        <input type="number" name="precio" id="precio" value="{{old('precio')}}" placeholder="Precio">
+        <input type="number" name="anio" id="anio" value="{{old('anio')}}" placeholder="Año">
         <input type="submit" value="Guardar">
     </form>
 </body>

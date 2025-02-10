@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('marca');
             $table->string('modelo');
+            $table->float('precio');
+            $table->integer('anio');
             $table->timestamps();
         });
     }
